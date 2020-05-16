@@ -1,9 +1,11 @@
-Feature: Tout user - Accéder à la HomePage
+Feature: Tout user - Affichage de la HomePage
 
-Un user accède à la homepage pour voir un titre, une barre de recherche, un bouton favoris, une liste de livres, un bouton partage
+Un user accède à la homepage pour voir un titre, une image de fond d'écran, une barre de recherche, un bouton favoris, une liste de livres, un bouton partage
 
 Background: 
     Given un titre existe:
+
+    Given un image fond d'écran existe:
 
     Given une searchBar existe:
 
@@ -18,6 +20,7 @@ Scenario Outline: homepage
     When il ouvre l'app
     Then il voit une homepage
     And un titre
+    And une image de fond d'écran
     And une barre de recherche
     And un bouton favoris
     And une liste de livres
