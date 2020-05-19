@@ -5,7 +5,7 @@ Un user accède à la homepage pour voir un titre, une image de fond d'écran, u
 Background: 
     Given un titre existe:
 
-    Given un image fond d'écran existe:
+    Given une image fond d'écran existe:
 
     Given une searchBar existe:
 
@@ -15,11 +15,10 @@ Background:
 
     Given un bouton partage existe:
 
-Scenario Outline: homepage
-    Given un user
-    When il ouvre l'app
-    Then il voit une homepage
-    And un titre
+Scenario: Homepage
+    Given un homepage
+    When un user ouvre l'app
+    Then il voit un titre
     And une image de fond d'écran
     And une barre de recherche
     And un bouton favoris
