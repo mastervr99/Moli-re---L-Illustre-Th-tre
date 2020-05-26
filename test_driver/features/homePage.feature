@@ -17,8 +17,8 @@ Background:
 
 Scenario: Homepage
     Given un homepage
-    When un user ouvre l'app
-    Then il voit un titre
+    When l'homepage s'affiche
+    Then l'user voit un titre
     And une image de fond d'écran
     And une barre de recherche
     And un bouton favoris

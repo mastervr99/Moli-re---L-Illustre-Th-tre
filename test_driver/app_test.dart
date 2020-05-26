@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
 import 'package:glob/glob.dart';
-import 'steps/titleSteps.dart';
+import 'steps/homePageFeatureSteps/when_display_homepage_step.dart';
 
 
 Future<void> main() {
@@ -14,7 +14,7 @@ Future<void> main() {
       JsonReporter(path: './report.json')
     ] // you can include the "StdoutReporter()" without the message level parameter for verbose log information
     // ..hooks = [HookExample()]
-    // ..stepDefinitions = [TapButtonNTimesStep(), GivenIPickAColour()]
+    ..stepDefinitions = [WhenDisplayHomepageStep()]
     // ..customStepParameterDefinitions = [ColourParameter()]
     ..restartAppBetweenScenarios = true
     ..targetAppPath = "test_driver/app.dart"
