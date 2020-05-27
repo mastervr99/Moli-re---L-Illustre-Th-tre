@@ -11,12 +11,12 @@ Background:
 
     Given un bouton favoris existe:
 
-    Given des listes existent:
+    Given des listes de livres existent:
 
     Given un bouton partage existe:
 
 Scenario: Homepage
-    Given un homepage
+    Given un homepage existe
     When l'homepage s'affiche
     Then l'user voit un titre
     And une image de fond d'écran
