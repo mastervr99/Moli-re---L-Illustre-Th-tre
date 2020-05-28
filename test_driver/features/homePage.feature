@@ -11,7 +11,7 @@ Background:
 
     Given un bouton favoris existe:
 
-    Given des listes de livres existent:
+    Given une liste de livres existent:
 
     Given un bouton partage existe:
 

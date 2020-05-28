@@ -1,12 +1,20 @@
-import 'Title.dart';
-import 'Background.dart';
-class HomePage {
-  Title title;
-  Background background;
-  SearchBar searchBar;
-  BookmarksButton bookmarksButton;
-  BookList booklist;
-  ShareButton shareButton;
 
+
+class HomePage {
+  String appTitle;
+  String backgroundImageUrl;
+  SearchBar searchBar;
+  Button bookmarksButton;
+  BookList bookList;
+  Button shareButton;
+
+  HomePage(String appTitle, String backgroundImageUrl, SearchBar searchBar, BookList bookList, Button shareButton)
+  {
+    this.appTitle = appTitle;
+    this.backgroundImageUrl = backgroundImageUrl;
+    this.searchBar = searchBar;
+    this.bookList = bookList;
+    this.shareButton = shareButton;
+  }
 
 }

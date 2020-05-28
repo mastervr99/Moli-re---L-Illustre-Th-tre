@@ -1,5 +1,5 @@
 
 
-class ShareButton {
+class ShareButton extends Button{
   
 }

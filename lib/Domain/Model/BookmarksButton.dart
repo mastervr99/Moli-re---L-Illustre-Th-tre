@@ -1,5 +1,5 @@
 
 
-class BookmarksButton {
+class BookmarksButton extends Button{
   
 }
