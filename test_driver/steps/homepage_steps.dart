@@ -23,9 +23,7 @@ class GivenHomePageHasTitle extends Given {
     homePageAdapterTest.updateHomePageTitle(homePageTitle);
     HomePageAdapter givenHomePageTitleStepAdapter = new HomePageAdapter(homePageServiceTest);
     HomePage givenhomePageTitleStepInDatabase = givenHomePageTitleStepAdapter.findHomePageByDenomination(homePageTestDenomination);
-    // expectMatch(givenhomePageTitleStepInDatabase.retrieveHomePageTitle(), homePageTitle);
-    expect("test", equals(homePageTitle));
-
+    expectMatch(givenhomePageTitleStepInDatabase.retrieveHomePageTitle(), homePageTitle);
   }
 
   @override
