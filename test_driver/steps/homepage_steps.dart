@@ -1,24 +1,33 @@
+import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
+import 'package:moliere/Application/Adapter/HomePageAdapter.dart';
 import 'package:moliere/Domain/Model/HomePage.dart';
 import 'package:moliere/Domain/Repository/HomePageRepository.dart';
+import 'package:moliere/Domain/Service/HomePageService.dart';
 import 'package:moliere/Infrastructure/Adapter/Repository/InMemoryHomePageRepositoryImpl.dart';
+import 'package:test/test.dart';
 
 
-HomePage homePage = new HomePage("HomepageStepsTest");
+HomePage homePageTest = new HomePage("HomepageStepsTest");
+String homePageTestDenomination = homePageTest.retrieveHomePageDenomination();
+HomePageRepository homePageRepositoryTest = new InMemoryHomePageRepositoryImpl();
+HomePageService homePageServiceTest = new HomePageService(homePageRepositoryTest);
+HomePageAdapter homePageAdapterTest = new HomePageAdapter(homePageServiceTest);    
 
-class GivenHomePageHasAppTitle extends Given {
+class GivenHomePageHasTitle extends Given {
 
   @override
   Future<void> executeStep() async {
-    String appTitle = "Test of Title";
-    homePage.registerHomePageTitle(appTitle);
-    HomePageRepository inMemoryHomePageRepositoryImpl = new InMemoryHomePageRepositoryImpl();
-    inMemoryHomePageRepositoryImpl.createHomePage(homePage);
-    HomePage homepageInDatabase = inMemoryHomePageRepositoryImpl.findHomePageByDenomination(homePage.retrieveHomePageDenomination());
-    expect(homepageInDatabase.displayHomePageTitle(), appTitle);
+    String homePageTitle = "Test of Title";
+    homePageAdapterTest.specifyHomepageParameter(homePageTest);
+    homePageAdapterTest.updateHomePageTitle(homePageTitle);
+    HomePageAdapter givenHomePageTitleStepAdapter = new HomePageAdapter(homePageServiceTest);
+    HomePage givenhomePageTitleStepInDatabase = givenHomePageTitleStepAdapter.findHomePageByDenomination(homePageTestDenomination);
+    // expectMatch(givenhomePageTitleStepInDatabase.retrieveHomePageTitle(), homePageTitle);
+    expect("test", equals(homePageTitle));
 
   }
 
   @override
-  RegExp get pattern => RegExp(r'Homepage has a App Title');
+  RegExp get pattern => RegExp(r'homepage a un titre');
 }

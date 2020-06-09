@@ -15,7 +15,7 @@ Future<void> main() {
     ] // you can include the "StdoutReporter()" without the message level parameter for verbose log information
     // ..hooks = [HookExample()]
     ..stepDefinitions = [
-      GivenHomePageHasAppTitle(),
+      GivenHomePageHasTitle(),
       ]
     // ..customStepParameterDefinitions = [ColourParameter()]
     ..restartAppBetweenScenarios = true

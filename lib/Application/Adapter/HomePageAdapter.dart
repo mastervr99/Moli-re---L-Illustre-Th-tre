@@ -14,19 +14,19 @@ class HomePageAdapter {
     this.homePageService = homePageService;
   }
 
-  void specifyHomepage(HomePage homePage)
+  void specifyHomepageParameter(HomePage homePage)
   {
     this.homePage = homePage;
   }
 
-  HomePage registerHomePageInDatabase()
+  void registerHomePageInDatabase()
   {
     homePageService.registerHomePageInDatabase(this.homePage);
   }
 
   HomePage findHomePageByDenomination(String homePageDenomination)
   {
-    homePageService.findHomePageByDenomination(homePageDenomination);
+    return homePageService.findHomePageByDenomination(homePageDenomination);
   }
 
   void updateHomePageTitle(String homePageTitle) 
@@ -36,7 +36,7 @@ class HomePageAdapter {
 
   String displayHomePageTitle()
   {
-    homePageService.displayHomePageTitle(this.homePage);
+    return homePageService.displayHomePageTitle(this.homePage);
   }
 
 }

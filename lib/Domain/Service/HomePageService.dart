@@ -11,14 +11,14 @@ class HomePageService {
     this.homePageRepository = homePageRepository;
   }
 
-  HomePage registerHomePageInDatabase(HomePage homePage)
+  void registerHomePageInDatabase(HomePage homePage)
   {
     homePageRepository.registerHomePageInDatabase(homePage);
   }
 
   HomePage findHomePageByDenomination(String homePageDenomination)
   {
-    homePageRepository.findHomePageByDenomination(homePageDenomination);
+    return homePageRepository.findHomePageByDenomination(homePageDenomination);
   }
 
   void updateHomePageTitle(HomePage homePage, String homePageTitle) 
@@ -28,7 +28,7 @@ class HomePageService {
 
   String displayHomePageTitle(HomePage homePage)
   {
-    homePageRepository.retrieveHomePageTitle(homePage);
+    return homePageRepository.retrieveHomePageTitle(homePage);
   }
 
 }

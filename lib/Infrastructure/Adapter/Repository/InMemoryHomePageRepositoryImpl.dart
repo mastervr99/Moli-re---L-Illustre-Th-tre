@@ -5,7 +5,7 @@ import 'package:moliere/Domain/Repository/HomePageRepository.dart';
 class InMemoryHomePageRepositoryImpl implements HomePageRepository {
 
   @override
-  HomePage registerHomePageInDatabase(HomePage homePage) {
+  void registerHomePageInDatabase(HomePage homePage) {
     // TODO: implement createHomePage
     throw UnimplementedError();
   }

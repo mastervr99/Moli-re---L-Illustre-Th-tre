@@ -3,7 +3,7 @@ import 'package:moliere/Domain/Model/HomePage.dart';
 
 abstract class HomePageRepository {
 
-  HomePage registerHomePageInDatabase(HomePage homePage);
+  void registerHomePageInDatabase(HomePage homePage);
 
   void updateHomePageTitle(HomePage homePage, String homePageTitle);
 
