@@ -2,8 +2,7 @@ import 'dart:async';
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
 import 'package:glob/glob.dart';
-import 'steps/homePageFeatureSteps/given_homepage_exist_step.dart';
-import 'steps/homePageFeatureSteps/when_display_homepage_step.dart';
+import 'steps/homepage_steps.dart';
 
 
 Future<void> main() {
@@ -16,8 +15,7 @@ Future<void> main() {
     ] // you can include the "StdoutReporter()" without the message level parameter for verbose log information
     // ..hooks = [HookExample()]
     ..stepDefinitions = [
-      GivenHomepageExist(),
-      WhenDisplayHomepageStep(),
+      GivenHomePageHasAppTitle(),
       ]
     // ..customStepParameterDefinitions = [ColourParameter()]
     ..restartAppBetweenScenarios = true

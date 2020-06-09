@@ -1,20 +1,26 @@
 
-
 class HomePage {
-  String appTitle;
+  String homePageDenomination;
+  String homePageTitle;
   String backgroundImageUrl;
-  SearchBar searchBar;
-  Button bookmarksButton;
-  BookList bookList;
-  Button shareButton;
 
-  HomePage(String appTitle, String backgroundImageUrl, SearchBar searchBar, BookList bookList, Button shareButton)
+  HomePage(String homePageDenomination)
   {
-    this.appTitle = appTitle;
-    this.backgroundImageUrl = backgroundImageUrl;
-    this.searchBar = searchBar;
-    this.bookList = bookList;
-    this.shareButton = shareButton;
+    this.homePageDenomination = homePageDenomination;
   }
 
+  void registerHomePageTitle(String appTitle)
+  {
+    this.homePageTitle = appTitle;
+  }
+
+  String retrieveHomePageTitle()
+  {
+    return homePageTitle;
+  }
+
+  String retrieveHomePageDenomination()
+  {
+    return homePageDenomination;
+  }
 }

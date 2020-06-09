@@ -1,19 +1,20 @@
+#language: fr
 Feature: Tout user - Affichage de la HomePage
 
 Un user accède à la homepage pour voir un titre, une image de fond d'écran, une barre de recherche, un bouton favoris, une liste de livres, un bouton partage
 
 Background: 
-    Given un titre existe:
+    Given l'homepage a un titre 
 
-    Given une image fond d'écran existe:
+    Given l'homepage a une image fond d'écran 
 
-    Given une searchBar existe:
+    Given l'homepage a une searchBar
 
-    Given un bouton favoris existe:
+    Given l'homepage a un bouton favoris 
 
-    Given une liste de livres existent:
+    Given l'homepage a une liste complète des livres 
 
-    Given un bouton partage existe:
+    Given l'homepage a un bouton partage
 
 Scenario: Homepage
     Given un homepage existe
@@ -22,5 +23,5 @@ Scenario: Homepage
     And une image de fond d'écran
     And une barre de recherche
     And un bouton favoris
-    And une liste de livres
+    And une liste complète des livres
     And un bouton partage
