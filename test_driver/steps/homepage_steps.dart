@@ -1,20 +1,17 @@
-import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:gherkin/gherkin.dart';
 import 'package:moliere/Application/Adapter/HomePageAdapter.dart';
 import 'package:moliere/Domain/Model/HomePage.dart';
 import 'package:moliere/Domain/Repository/HomePageRepository.dart';
 import 'package:moliere/Domain/Service/HomePageService.dart';
 import 'package:moliere/Infrastructure/Adapter/Repository/InMemoryHomePageRepositoryImpl.dart';
-import 'package:test/test.dart';
-
 
 HomePage homePageTest = new HomePage("HomepageStepsTest");
-String homePageTestDenomination = homePageTest.retrieveHomePageDenomination();
+String homePageDenominationTest = homePageTest.retrieveHomePageDenomination();
 HomePageRepository homePageRepositoryTest = new InMemoryHomePageRepositoryImpl();
 HomePageService homePageServiceTest = new HomePageService(homePageRepositoryTest);
 HomePageAdapter homePageAdapterTest = new HomePageAdapter(homePageServiceTest);    
 
-class GivenHomePageHasTitle extends Given {
+class GivenHomePageHasTitle extends Given{
 
   @override
   Future<void> executeStep() async {
@@ -22,8 +19,8 @@ class GivenHomePageHasTitle extends Given {
     homePageAdapterTest.specifyHomepageParameter(homePageTest);
     homePageAdapterTest.updateHomePageTitle(homePageTitle);
     HomePageAdapter givenHomePageTitleStepAdapter = new HomePageAdapter(homePageServiceTest);
-    HomePage givenhomePageTitleStepInDatabase = givenHomePageTitleStepAdapter.findHomePageByDenomination(homePageTestDenomination);
-    expectMatch(givenhomePageTitleStepInDatabase.retrieveHomePageTitle(), homePageTitle);
+    HomePage givenhomePageTitleStepInDatabase = givenHomePageTitleStepAdapter.findHomePageByDenomination(homePageDenominationTest);
+    expect(givenhomePageTitleStepInDatabase.retrieveHomePageTitle(), homePageTitle);
   }
 
   @override
