@@ -16,12 +16,19 @@ void main() {
     HomePageRepository homePageRepositoryTest = new InMemoryHomePageRepositoryImpl();
     HomePageService homePageServiceTest = new HomePageService(homePageRepositoryTest);
     HomePageAdapter homePageAdapterTest = new HomePageAdapter(homePageServiceTest);   
-
+    
+    display(String str)
+    {
+      return str;
+    }
 
     test('HomePage should display a title', () {
-
-      
+        String str = "test";
+        
+        expect(display("str"), str);
     });
+
+
 
   });  
   
