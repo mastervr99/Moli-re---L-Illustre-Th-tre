@@ -1,8 +1,17 @@
 
 import 'package:moliere/Domain/Model/HomePage.dart';
 import 'package:moliere/Domain/Repository/HomePageRepository.dart';
+import 'package:moliere/Infrastructure/Database/AbstractDatabase.dart';
 
 class InMemoryHomePageRepositoryImpl implements HomePageRepository {
+
+  @override
+  AbstractDatabase homePageData;
+
+  InMemoryHomePageRepositoryImpl(AbstractDatabase homePageData)
+  {
+    this.homePageData = homePageData;
+  }
 
   @override
   void registerHomePageInDatabase(HomePage homePage) {
@@ -34,6 +43,5 @@ class InMemoryHomePageRepositoryImpl implements HomePageRepository {
     throw UnimplementedError();
   }
 
-  
-  
+
 }

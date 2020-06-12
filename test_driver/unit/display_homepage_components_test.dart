@@ -10,31 +10,29 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   group('DisplayHomePageComponents', () {
 
-    HomePage homePageUnit = new HomePage("homePageDenominationUnit");
+    final HomePage homePageUnit = new HomePage("homePageDenominationUnit");
     
-    String homePageDenominationUnit = homePageUnit.retrieveHomePageDenomination();
-    HomePageRepository homePageRepositoryTest = new InMemoryHomePageRepositoryImpl();
-    HomePageService homePageServiceTest = new HomePageService(homePageRepositoryTest);
-    HomePageAdapter homePageAdapterTest = new HomePageAdapter(homePageServiceTest);   
-    
-    display(String str)
+    final String homePageDenominationUnit = homePageUnit.retrieveHomePageDenomination();
+    final HomePageRepository homePageRepositoryTest = new InMemoryHomePageRepositoryImpl();
+    final HomePageService homePageServiceTest = new HomePageService(homePageRepositoryTest);
+    final HomePageAdapter homePageAdapterTest = new HomePageAdapter(homePageServiceTest);   
+  
+    void _assertThatAllComponentsAreDisplayed()
     {
-      return str;
+
     }
 
-    test('HomePage should display a title', () {
-        String str = "test";
-        
-        expect(display("str"), str);
+    test('HomePage should display all components', () {
+
+
+
+        expect("str","test");
+
+       _assertThatAllComponentsAreDisplayed();
     });
 
-
-
   });  
-  
-
-
  
-  
+
   
 }
